@@ -66,20 +66,6 @@ async function checkForEvents() {
 
             await category.createChannel(channelName, {
                 permissionOverwrites: [
-                    {
-                        id: guild.roles.everyone,
-                        deny: [
-                            'SEND_MESSAGES',
-                            'VIEW_CHANNEL'
-                        ]
-                    },
-                    {
-                        id: database.getClubRole(),
-                        allow: [
-                            'SEND_MESSAGES',
-                            'VIEW_CHANNEL'
-                        ]
-                    }
                 ]
             });
             await channel.send({
